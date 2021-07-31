@@ -1,4 +1,4 @@
-FROM node:alpine AS builder
+FROM node:alpine
 
 USER node
 
@@ -14,4 +14,4 @@ CMD ["npm", "run", "build"]
 
 
 FROM nginx
-COPY --from=builder /home/node/app/build /usr/share/nginx/html
+COPY --from=0 /home/node/app/build /usr/share/nginx/html
