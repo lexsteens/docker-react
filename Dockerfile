@@ -10,7 +10,7 @@ RUN npm install
 
 COPY --chown=node:node . .
 
-CMD ["npm", "run", "build"]
+RUN ["npm", "run", "build"]
 
 
 FROM nginx
